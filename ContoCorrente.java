@@ -4,13 +4,18 @@ public class ContoCorrente
     private double saldo;
     // memorizza il numero del conto
     private int numero;
+    // variabile condivisa (inizializzata a 1000)
+    // il numero del conto viene inizializzato usando la variabile condivisa
+    //variabile contatore che sia visibile a tutti gli oggetti ContoCorrente
+    private static int numeroUltimoContoCreato = 1000;
     
     // costruttore della classe
     // inizializza anche il numero del conto
     public ContoCorrente(double saldoIniziale, int numeroConto) 
     { 
         saldo = saldoIniziale;
-        numero = numeroConto;
+        numeroUltimoContoCreato++;
+        numero = numeroUltimoContoCreato;
     }
     
     // metodo per il versamento di somme
